@@ -1,6 +1,5 @@
 # Classic-Wow-Database
-Open Source Repository for Classic WoW Database in PHP | SQL | Smarty | Dbsimple
-Current Author: @BrianSQL
+Open Source Classic WoW Database in PHP | SQL | Smarty | Dbsimple
 ------------
 ![logo](images/logo2.png)
 
@@ -11,7 +10,8 @@ Current Author: @BrianSQL
 ## Introduction
 
 Classic WoW Database is an open source tool for WoW patch 1.12.1 (modeled off of the open source aowow project for WoW v3.3.5)
-It has been heavily ported since then, and is in a stable state for anyone to use | learn from. 
+
+It has been heavily ported since then & is in a stable state for anyone to use | build on | learn from. 
 
 ## Included Project Components
 
