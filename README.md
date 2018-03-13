@@ -1,6 +1,5 @@
 # Classic-Wow-Database
 Open Source Repository for Classic WoW Database in PHP | SQL | Smarty | Dbsimple
-Current Author: @BrianSQL
 ------------
 ![logo](images/logo2.png)
 
