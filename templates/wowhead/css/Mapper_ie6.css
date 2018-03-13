@@ -1,0 +1,23 @@
+/*
+ TalentCalc_ie6.css version 278
+*/
+.mapper .pin a {
+background:none;
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='templates/wowhead/images/map-pin-yellow.html');
+}
+
+.mapper .pin-1 a {
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='templates/wowhead/images/map-pin-green.html');
+}
+
+.mapper .pin-2 a {
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='templates/wowhead/images/map-pin-red.html');
+}
+
+.mapper .pin-3 a {
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='templates/wowhead/images/map-pin-blue.html');
+}
+
+.mapper .pin-4 a {
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='templates/wowhead/images/map-pin-purple.html');
+}

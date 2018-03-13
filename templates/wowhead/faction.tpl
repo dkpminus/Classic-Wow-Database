@@ -1,0 +1,51 @@
+{include file='header.tpl'}
+
+		<div id="main">
+
+			<div id="main-precontents"></div>
+
+			<div id="main-contents" class="main-contents">
+				<script type="text/javascript">
+					{include file='bricks/allcomments.tpl'}
+					var g_pageInfo = {ldelim}type: {$page.type}, typeId: {$page.typeid}, name: '{$faction.name|escape:"quotes"}'{rdelim};
+					g_initPath({$page.path});
+				</script>
+				<table class="infobox">
+					<tr><th>{#Quick_Facts#}</th></tr>
+					<tr><td>
+						<div class="infobox-spacer"></div>
+						<ul>
+							{if isset($faction.group)}<li><div>{#Group#}: {$faction.group}</div></li>{/if}
+							{if isset($faction.side)}<li><div>{#Side#}: {if $faction.side==1}<span class="alliance-icon">{#Alliance#}</span>{elseif $faction.side==2}<span class="horde-icon">{#Horde#}</span>{/if}</div></li>{/if}
+						</ul>
+					</td></tr>
+				</table>
+				<div class="text">
+					<a onmouseover="Tooltip.showAtCursor(event, '<sub><img width=15 src=templates/wowhead/images/wowpedia.ico></sub> {#Wsearch#} {"WoWpedia.org"}', 0, 0, 'q')" onmousemove="Tooltip.cursorUpdate(event)" onmouseout="Tooltip.hide()" href="http://www.wowpedia.org/index.php?title=Special:Search&search={$faction.name}&go=Go"" class="button-red"><em><b><i>Wowpedia</i></b><span>Wowpedia</span></em></a>
+					<a onmouseover="Tooltip.showAtCursor(event, '<sub><img width=15 src=templates/wowhead/images/wowhead.png></sub> {#Wsearch#} {"Wowhead.com"}', 0, 0, 'q')" onmousemove="Tooltip.cursorUpdate(event)" onmouseout="Tooltip.hide()" href="http://www.wowhead.com/{$query}" class="button-red"><em><b><i>Wowhead</i></b><span>Wowhead</span></em></a>
+					<h1>{$faction.name}</h1>
+					{$faction.description1}
+					{if $faction.description1}<h1></h1>{/if}
+					{$faction.description2}
+				<h2>{#Related#}</h2>
+				</div>
+				<div id="tabs-generic"></div>
+				<div id="listview-generic" class="listview"></div>
+				<script type="text/javascript">
+var tabsRelated = new Tabs({ldelim}parent: ge('tabs-generic'){rdelim});
+{if isset($faction.items)}{include			file='bricks/item_table.tpl'		id='items'			name='items'		tabsid='tabsRelated'	data=$faction.items			}{/if}
+{if isset($faction.npcs)}{include			file='bricks/creature_table.tpl'	id='npcs'			name='members'		tabsid='tabsRelated'	data=$faction.npcs			}{/if}
+{if isset($faction.quests)}{include			file='bricks/quest_table.tpl'		id='quests'			name='quests'		tabsid='tabsRelated'	data=$faction.quests		}{/if}
+{if isset($faction.criteria_of)}{include	file='bricks/achievement_table.tpl'	id='criteria-of'	name='criteriaof'	tabsid='tabsRelated'	data=$faction.criteria_of	}{/if}
+new Listview({ldelim}template: 'comment', id: 'comments', name: LANG.tab_comments, tabs: tabsRelated, parent: 'listview-generic', data: lv_comments{rdelim});
+tabsRelated.flush();
+				</script>
+
+{if $user!=null}
+{include file='bricks/contribute.tpl'}
+{/if}
+
+				</div>
+			</div>
+		</div>
+{include file='footer.tpl'}
